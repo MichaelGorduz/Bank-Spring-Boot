@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Transactions</title>
+</head>
+<body>
+<h1>Welcome to the transactions page!</h1>
+<table>
+    <tr>
+        <th>ID</th>
+        <th>Sender</th>
+        <th>Receiver</th>
+        <th>Amount</th>
+        <th>Currency</th>
+    </tr>
+    <tr th:each="transaction : ${transactions}">
+        <td th:text="${transaction.id}"></td>
+        <td th:text="${transaction.senderFirstName} + ' ' + ${transaction.senderLastName}"></td>
+        <td th:text="${transaction.recieverFirstName} + ' ' + ${transaction.recieverLastName}"></td>
+        <td th:text="${transaction.amount}"></td>
+        <td th:text="${transaction.currency}"></td>
+    </tr>
+</table>
+</body>
+</html>
